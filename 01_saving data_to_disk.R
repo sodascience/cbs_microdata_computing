@@ -7,9 +7,8 @@ df <- penguins_raw
 # saving as csv
 write_csv(df, "processed_data/penguins.csv")
 
-# serializing to .rds (binary format)
-write_rds(df, "processed_data/penguins.rds")
+# serializing to compressed .rds
+write_rds(df, "processed_data/penguins.rds", compress = "xz")
 
-# serializing to compressed .rds (longer load times)
-write_rds(df, "processed_data/penguins_compressed.rds", 
-          compress = "xz")
+# reading from .rds
+df <- read_rds("processed_data/penguins.rds")
