@@ -76,4 +76,8 @@ list(m = m, s = s)
 
 
 # compare speed
-bench::mark(R = em_iter_r(m, s, x), Cpp = em_iter_cpp(m, s, x), check = FALSE)
+bench::mark(
+  R = em_iter_r(m, s, x), 
+  Cpp = em_iter_cpp(m, s, x), 
+  check = FALSE
+)
